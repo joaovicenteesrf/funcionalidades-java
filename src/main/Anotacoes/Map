@@ -1,0 +1,57 @@
+Em Java, um Map é uma interface que representa uma coleção de pares chave-valor, onde cada chave é única e mapeada para
+um valor correspondente. O Map não permite chaves duplicadas e cada chave está associada a um único valor.
+
+A implementação mais comumente usada da interface Map em Java é o HashMap. O HashMap é uma classe que implementa a
+interface Map e armazena os pares chave-valor em uma estrutura de tabela hash, permitindo um acesso rápido aos valores
+com base nas chaves.
+
+Aqui está um exemplo de como usar HashMap em Java:
+
+----------------------------------------------------------------------------------
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Criando um HashMap
+        Map<String, Integer> map = new HashMap<>();
+
+        // Adicionando pares chave-valor
+        map.put("Chave 1", 100);
+        map.put("Chave 2", 200);
+        map.put("Chave 3", 300);
+
+        // Acessando valores por chave
+        int valor1 = map.get("Chave 1");
+        System.out.println("Valor 1: " + valor1);
+
+        // Verificando se uma chave existe
+        boolean contemChave2 = map.containsKey("Chave 2");
+        System.out.println("Contém Chave 2: " + contemChave2);
+
+        // Removendo um par chave-valor
+        map.remove("Chave 3");
+
+        // Iterando sobre os pares chave-valor
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            String chave = entry.getKey();
+            int valor = entry.getValue();
+            System.out.println(chave + " => " + valor);
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+Neste exemplo, criamos um HashMap chamado map que mapeia chaves do tipo String para valores do tipo Integer.
+Em seguida, adicionamos pares chave-valor usando o método put(). Acessamos um valor específico por chave usando o
+método get(). Verificamos se uma chave existe usando o método containsKey(). Removemos um par chave-valor usando o
+método remove(). Por fim, iteramos sobre todos os pares chave-valor usando o entrySet() e imprimimos cada um deles.
+
+A saída será algo como:
+
+Valor 1: 100
+Contém Chave 2: true
+Chave 1 => 100
+Chave 2 => 200

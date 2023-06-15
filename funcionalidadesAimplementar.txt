@@ -2,3 +2,4 @@ Collections
 ArrayList
 Funções Lambda
 HashSet
+Stream
